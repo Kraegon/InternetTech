@@ -1,0 +1,45 @@
+/*!
+ *  v0.1
+ *  By Julian G. West & Jelle Braat
+ *  Custom css
+*/
+
+.Header{
+	background-color: #0000FF;
+	position:fixed;
+	height:10%;
+	width:100%;
+}
+
+.Header > h1{
+	color: #ffffff;
+	text-align: center;
+}
+
+.MainContainer{
+	padding-top: 8%;
+	width:90%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+.Row{
+	width:98%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.col-1{
+	width: 10%;
+}
+.col-2{
+	width: 25%;
+}
+.col-3{
+	width:33%;
+}
+.col-4{
+	width:50%;
+}
+
+
