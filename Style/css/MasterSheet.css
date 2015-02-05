@@ -9,13 +9,7 @@
 	position:fixed;
 	width:100%;
 
-	background-image: -webkit-gradient(
-	linear,
-	left top,
-	left bottom,
-	color-stop(0, #0000FF),
-	color-stop(1, #8C8CFA)
-	);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0000FF),	color-stop(1, #8C8CFA));
 	background-image: -o-linear-gradient(bottom, #0000FF 0%, #8C8CFA 100%);
 	background-image: -moz-linear-gradient(bottom, #0000FF 0%, #8C8CFA 100%);
 	background-image: -webkit-linear-gradient(bottom, #0000FF 0%, #8C8CFA 100%);
@@ -31,25 +25,29 @@
 
 .Navbar-Button{
 	color: #ffffff;
-	font-size: 16px;
+	font-size: 16pt;
 	text-decoration: none;
+	font-weight:bold;
 }
 .Navbar-Button :hover{
-	background-color: #0000FF
+	background-color: #0000FF;
+	font-weight: bolder;
+
 }
 
 .MainContainer{
-	padding-top: 8%;
+	padding-top: 5%;
+	padding-bottom: 5%;
 	width:90%;
 	margin-right: 5%;
 	margin-left: 5%;
 	background-color: hsl(190, 70%, 75%) ;
+	word-wrap: break-word;
 }
 
 .Footer{
-	color: #ffffff;
-	height: 40px;
 	width: 100%;	
+	padding-top:1%;
 	vertical-align: middle;
 
 	background-image: -webkit-gradient(linear,right bottom, right top, color-stop(0, #0000FF), color-stop(1, #8C8CFA));
@@ -59,8 +57,18 @@
 	background-image: -ms-linear-gradient(top, #0000FF 0%, #8C8CFA 100%);
 	background-image: linear-gradient(to top, #0000FF 0%, #8C8CFA 100%);
 }
-
-
+.Footer > h1{
+	font-weight: bold;
+	color: #ffffff;
+	margin: 2% 2% 2% 2%;
+	font-size: 12pt;
+}
+.Footer > a {
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+	margin: 2% 2% 2% 2%;
+}
 
 
 .Row{
