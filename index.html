@@ -4,45 +4,67 @@
 	<title>Hello Web!</title>
 	<link rel="stylesheet" type="text/css" href="Style/css/MasterSheet.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/normalize.css">
+	<script src="Style/js/JQuery.js"> </script>
+
+	<script>
+		function byId(e) { return document.getElementById(e); }
+		var isNavbarToggled = false;
+		function toggleNavbar(s, e){
+			var element = byId("header");
+		}
+	</script>
 </head>
 <body>
 <header> 
-<div class="Header">
+<div id="header" class="Header">
 	<marquee direction="right" scrollamount="5" behavior="alternate"> 
-		<h1>
-			TITLE
-		</h1>
+		<a href="index.html">
+			<img src="Image/Home.png" alt="Home" />
+		</a>
 	</marquee>
 	<div class="Row">
-	<div class="Navbar-Button">
-		<a class="Navbar-Button Col-3" href="index.html">
-			Home
-		</a>
-		<a class="Navbar-Button Col-3" href="content.html">
-			Content
-		</a>
-		<a class="Navbar-Button Col-3" href="about.html">
-			About
-		</a>
+		<div class="Navbar-Button">
+			<a class="Navbar-Button Navbar-Button-Align" href="index.html">
+				Home
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="content.html">
+				Content
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="about.html">
+				About
+			</a>
 		</div>
 	</div>
 </div>
 </header>
 <div class="MainContainer">
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<div class="Row">
+	<!-- example Css table -->
+		<div class="Col-50">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="Col-50">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
 </div>
 <footer>
 	<div class="Footer"> 

@@ -4,26 +4,30 @@
 	<title>Hello Web!</title>
 	<link rel="stylesheet" type="text/css" href="Style/css/MasterSheet.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/normalize.css">
+	<script src="Style/js/JQuery.js"> </script>
+
 </head>
 <body>
 <header> 
 <div class="Header">
 	<marquee direction="right" scrollamount="5" behavior="alternate"> 
-		<h1>
-			TITLE
-		</h1>
+		<a href="index.html" style="text-decoration: none">
+			<h1>
+				TITLE
+			</h1>
+		</a>
 	</marquee>
 	<div class="Row">
-	<div class="Navbar-Button">
-		<a class="Navbar-Button Col-3" href="index.html">
-			Home
-		</a>
-		<a class="Navbar-Button Col-3" href="content.html">
-			Content
-		</a>
-		<a class="Navbar-Button Col-3" href="about.html">
-			About
-		</a>
+		<div class="Navbar-Button">
+			<a class="Navbar-Button Navbar-Button-Align" href="index.html">
+				Home
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="content.html">
+				Content
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="about.html">
+				About
+			</a>
 		</div>
 	</div>
 </div>
@@ -31,10 +35,25 @@
 <div class="MainContainer">
 	<p>
 		<center>
-			<object type="image/svg+xml" data="cookie.svg">
+			<object type="image/svg+xml" data="cookie.svg" class="Image-Scale">
 				Your browser does not support SVG
 			</object>
 		</center>
+	</p>
+	<p>
+		Eisen:
+		<ul>
+			Eisen:
+			<li>
+				Eis 1	
+			</li>
+			<li>
+				Eis 2
+			</li>
+			<li>
+				Eis 3
+			</li>
+		</ul>
 	</p>
 </div>
 <footer>
@@ -44,7 +63,7 @@
 			&copy 2015 Julian &amp Jelle
 		</h1>
 		<a href="http://www.avans.nl">
-			http://www.avans.nl
+			www.avans.nl
 		</a>
 	</div>
 </footer>

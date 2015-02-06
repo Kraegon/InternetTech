@@ -4,34 +4,70 @@
 	<title>Hello Web!</title>
 	<link rel="stylesheet" type="text/css" href="Style/css/MasterSheet.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/normalize.css">
+	<script src="Style/js/JQuery.js"> </script>
+
 </head>
 <body>
 <header> 
 <div class="Header">
 	<marquee direction="right" scrollamount="5" behavior="alternate"> 
-		<h1>
-			TITLE
-		</h1>
+		<a href="index.html" style="text-decoration: none">
+			<h1>
+				TITLE
+			</h1>
+		</a>
 	</marquee>
 	<div class="Row">
-	<div class="Navbar-Button">
-		<a class="Navbar-Button Col-3" href="index.html">
-			Home
-		</a>
-		<a class="Navbar-Button Col-3" href="content.html">
-			Content
-		</a>
-		<a class="Navbar-Button Col-3" href="about.html">
-			About
-		</a>
+		<div class="Navbar-Button">
+			<a class="Navbar-Button Navbar-Button-Align" href="index.html">
+				Home
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="content.html">
+				Content
+			</a>
+			<a class="Navbar-Button Navbar-Button-Align" href="about.html">
+				About
+			</a>
 		</div>
 	</div>
 </div>
 </header>
 <div class="MainContainer">
 	<p>
-	ABOUT PAGE!
+		<h6>This is the about page</h6> <br />
 	</p>
+
+	<input type="button" class="Button" value="Add Text"/>
+
+	<table class="Table">
+		<thead>
+			<tr>
+				<td>Rij 1, col 1 in head </td>
+				<td>rij 1, col 2 in head </td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Rij 1, col 1 in body </td>
+				<td>Rij 1, col 2 in body </td>
+			</tr>
+			<tr>
+				<td>Rij 2, col 1 in body </td>
+				<td>Rij 2, col 2 in body </td>
+			</tr>
+			<tr>
+				<td>Rij 3, col 1 in body </td>
+				<td>Rij 3, col 2 in body </td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>Rij 1, col 1 in foot </td>
+				<td>rij 1, col 2 in foot </td>
+			</tr>
+		</tfoot>
+	</table>
+
 </div>
 <footer>
 	<div class="Footer"> 
