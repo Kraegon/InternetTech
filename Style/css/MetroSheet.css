@@ -1,0 +1,161 @@
+/*!
+ *  v0.1
+ *  By Julian G. West & Jelle Braat
+ *  Custom css
+*/
+html{
+	background-color: #4aff53;	
+	font-family: Tahoma;
+}
+
+header .Header{
+	color: #ffffff;
+	background-color: #45de4c;
+	width:10%;
+	padding-left: :0;
+	position: fixed;
+	height: 100%;
+	border-right: 4px solid #04d90b;
+}
+header marquee{
+	height: 10%;
+	border-bottom: 4px solid #04d90b;
+}
+
+header marquee:hover{
+	background-color: #00ff00;
+
+}
+
+header .Row{
+	height:90%;
+}
+
+.Navbar-Button{
+	display:block;
+	width: 100%;
+	height: 5em;
+	color:white;
+	font-size: 16pt;
+	font-weight:bold;
+}
+.Navbar-Button :hover{
+	background-color: #00ff00;
+}
+.Navbar-Button-Align{
+	background-color: #04d90b;
+	border-bottom: 4px solid #45de4c;	
+	padding-bottom: 30px;
+	text-align: center;
+	vertical-align: center;
+	text-decoration: none;
+}
+.MainContainer{
+	width:88%;
+	padding: 15px;
+	margin-left: 12%;
+}
+
+.Table{
+	background-color: #04d90b;
+	padding: 5%;
+	border: 4px solid #45de4c;
+	text-align: center;
+	width:30%;
+}
+
+.Table > thead > tr > td,
+.Table > tbody > tr > td,
+.Table > tfoot > tr > td,
+.Table > thead > tr > th,
+.Table > tbody > tr > th,
+.Table > tfoot > tr > th{
+	padding-left: 2%;
+	padding-right: 2%;
+	border: 4px solid #45de4c;
+}
+.Table > thead > tr:hover,
+.Table > tbody > tr:hover,
+.Table > tfoot > tr:hover,
+.Table > thead > tr:hover,
+.Table > tbody > tr:hover,
+.Table > tfoot > tr:hover{
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #00ff00;
+}
+.Table > thead > tr > td,
+.Table > tbody > tr > td,
+.Table > tfoot > tr > td,
+.Table > thead > tr > th,
+.Table > tbody > tr > th,
+.Table > tfoot > tr > th{
+	height: 40px;
+}
+
+
+@media(max-width: 992px){
+	.MainContainer{
+	}
+	.Table{
+	}
+}
+
+.Footer{
+	width:28%;
+	padding: 15px;
+	margin-left: 12%;
+}
+.Footer:hover{
+	background-color: #00ff00;
+	color: #ffffff;
+}
+.Footer > h1{
+	font-size: 12pt;
+}
+.Footer > h1:hover{
+	font-size: 14pt;
+	font-weight: bold;
+}
+.Footer > a:hover {
+	font-size: 12pt;
+	font-weight: bold;
+}
+.Row{
+}
+.Col-10, .Col-25, .Col-33, .Col-50, .Col-66, .Col-75{
+}
+
+.Col-10{
+}
+.Col-25{
+}
+.Col-33{
+}
+.Col-50{
+} 
+.Col-66{
+}
+.Col-75{
+}
+
+.Button{
+}
+.Button:hover,
+.Button:focus,
+.Button.focus,
+.Button:active,
+.Button.active{
+}
+.Button.disabled,
+.Button.disabled:hover,
+.Button.disabled:focus,
+.Button.disabled:active,
+.Button.disabled.active{
+}
+
+.Image-Scale{
+	display:block;
+	max-width: 100%;
+	height: auto;
+}

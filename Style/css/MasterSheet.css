@@ -3,12 +3,15 @@
  *  By Julian G. West & Jelle Braat
  *  Custom css
 */
+html{
+	font-family: helvetica;
+}
 
 .Header{
 	background-color: #0000FF;
 	position:fixed;
 	width:100%;
-
+	z-index: 10;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0000FF),	color-stop(1, #8C8CFA));
 	background-image: -o-linear-gradient(bottom, #0000FF 0%, #8C8CFA 100%);
 	background-image: -moz-linear-gradient(bottom, #0000FF 0%, #8C8CFA 100%);
@@ -21,6 +24,10 @@
 	margin-top: 2px;
 	color: #ffffff;
 	text-align: center;
+}
+.Header button{
+	height:100%;
+	width:10%;
 }
 
 .Navbar-Button{
@@ -39,7 +46,7 @@
 	width:33%;
 }
 
-.Header > .Row {
+.Header .Row {
 	text-align: center;
 }
 
@@ -47,6 +54,7 @@
 	padding-top: 5%;
 	padding-bottom: 5%;
 	width:90%;
+	height:100%;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 2%;
@@ -132,6 +140,7 @@
 	min-height: 1px;
 }
 .Col-10, .Col-25, .Col-33, .Col-50, .Col-66, .Col-75{
+	display:inline-block;
 	position: relative;
 	min-height: 1px;
 	padding-left: 2%;
