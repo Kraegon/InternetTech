@@ -25,10 +25,6 @@ html{
 	color: #ffffff;
 	text-align: center;
 }
-.Header button{
-	height:100%;
-	width:10%;
-}
 
 .Navbar-Button{
 	color: #ffffff;
@@ -43,7 +39,7 @@ html{
 }
 .Navbar-Button-Align{
 	float:left;
-	width:33%;
+	width:25%;
 }
 
 .Header .Row {
@@ -132,6 +128,9 @@ html{
 	text-decoration: underline;
 	margin: 2% 2% 2% 2%;
 	color: #8888ff;
+}
+.Footer > a:hover{
+	color:#ffffff;
 }
 .Row{
 	width:98%;

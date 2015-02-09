@@ -2,30 +2,20 @@
 <html>
 <head>
 	<title>Hello Web!</title>
-	<link id="stylesheet" rel="stylesheet" type="text/css" href="Style/css/MasterSheet.css">
-<!--	<link rel="stylesheet" type="text/css" href="Style/css/MetroSheet.css"> -->
+	<link id="style" rel="stylesheet" type="text/css" href="Style/css/MasterSheet.css">
 	<link rel="stylesheet" type="text/css" href="Style/css/normalize.css">
-	<script src="Style/js/JQuery.js"> </script>
+    <script type="application/javascript" src="Style/js/Scripts.js"> </script>
 
-	<script text/java>
-		function ChangeCss(){
-//			alert("css change?");
-//			console.log("css change");
-//			$("#stylesheet").href = "Style/css/MetroSheet.css";
-		}
-	</script>
 </head>
 <body>
 <header> 
 <div id="header" class="Header">
-	<marquee direction="right" scrollamount="5" behavior="alternate" width="80%"> 
+	<marquee direction="right" scrollamount="5" behavior="alternate"> 
 		<a href="index.html">
 			<img src="Image/cookie.png" alt="Home" />
 		</a>
 	</marquee>
-		<button onclick="ChangeCss">
-			Change Layout
-		</button>
+
 	<div class="Row">
 		<nav class="Navbar-Button">
 			<a class="Navbar-Button Navbar-Button-Align" href="index.html">
@@ -37,13 +27,16 @@
 			<a class="Navbar-Button Navbar-Button-Align" href="Page/about.html">
 				About
 			</a>
+			<a type="button" class="Navbar-Button Navbar-Button-Align"  	onclick="ChangeCss('index');" >
+				Change style
+			</a>
 		</nav>
 	</div>
 </div>
 </header>
 <div class="MainContainer">
 	<div class="Row">
-	<!-- example Css table -->
+
 		<article class="Col-50">
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -73,6 +66,10 @@
 		<aside>
 			Aside
 		</aside>
+		<audio autoplay loop controls>
+  			<source src="Sound/Sample.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+		</audio> 
 	</div>
 </div>
 <footer>
@@ -81,8 +78,8 @@
 			Created by Julian G. West &amp Jelle Braat<br />
 			&copy 2015 Julian &amp Jelle
 		</h1>
-		<a href="http://www.avans.nl">
-			http://www.avans.nl
+		<a href="http://www.w3schools.com/js/js_cookies.asp">
+			W3schools over cookies
 		</a>
 	</div>
 </footer>
