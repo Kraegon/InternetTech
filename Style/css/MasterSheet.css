@@ -44,6 +44,7 @@ html{
 
 .Header .Row {
 	text-align: center;
+	content-align: center;
 }
 
 .MainContainer{
@@ -133,36 +134,36 @@ html{
 	color:#ffffff;
 }
 .Row{
+	display: table;
 	width:98%;
 	margin-left: -2px;
 	margin-right: -2px;
 	min-height: 1px;
 }
 .Col-10, .Col-25, .Col-33, .Col-50, .Col-66, .Col-75{
-	display:inline-block;
-	position: relative;
+	float:left;
 	min-height: 1px;
-	padding-left: 2%;
-	padding-right: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
 }
 
 .Col-10{
-	width: 10%;
+	width: 8%;
 }
 .Col-25{
-	width: 25%;
+	width: 23%;
 }
 .Col-33{
-	width:33%;
+	width:31%;
 }
 .Col-50{
-	width:50%;
+	width:48%;
 } 
 .Col-66{
-	width:66%;
+	width:64%;
 }
 .Col-75{
-	width:75%;
+	width:73%;
 }
 
 .Button{
