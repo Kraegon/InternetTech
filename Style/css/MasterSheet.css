@@ -32,6 +32,7 @@ html{
 	text-decoration: none;
 	font-weight:bold;
 	border-color: transparent;
+	cursor: pointer;
 }
 .Navbar-Button :hover{
 	background-color: #0000FF;
@@ -51,7 +52,7 @@ html{
 	padding-top: 5%;
 	padding-bottom: 5%;
 	width:90%;
-	height:100%;
+	height:90%;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 2%;
@@ -71,7 +72,12 @@ html{
 	padding-right:2%;
 }
 
-.Table > thead > tr > td,
+.Table > thead > tr > td{
+	background-color: #3030F2;
+	font-size: 12pt;
+	font-weight: bolder;
+	padding: 2px 2px 2px 2px;
+}
 .Table > tbody > tr > td,
 .Table > tfoot > tr > td,
 .Table > thead > tr > th,
@@ -81,13 +87,20 @@ html{
 	padding: 2px 2px 2px 2px;
 }
 
-.Table > thead > tr > td:hover,
 .Table > tbody > tr > td:hover,
 .Table > tfoot > tr > td:hover,
 .Table > thead > tr > th:hover,
 .Table > tbody > tr > th:hover,
 .Table > tfoot > tr > th:hover{
-	background-color: #ff0000;
+	background-color: #0000ff;
+}
+.Fieldset {
+	border: 4px double #ffffff;
+}
+.Fieldset legend{
+	font-weight: bolder;
+	font-size: 16px;
+	font-family: "trebuchet ms";
 }
 
 
@@ -133,12 +146,16 @@ html{
 .Footer > a:hover{
 	color:#ffffff;
 }
-.Row{
+
+.Row, .Vertical-Spacing{
 	display: table;
 	width:98%;
 	margin-left: -2px;
 	margin-right: -2px;
 	min-height: 1px;
+}
+.Vertical-Spacing{
+	height: 20pt;
 }
 .Col-10, .Col-25, .Col-33, .Col-50, .Col-66, .Col-75{
 	float:left;
@@ -146,7 +163,6 @@ html{
 	padding-left: 1%;
 	padding-right: 1%;
 }
-
 .Col-10{
 	width: 8%;
 }
@@ -165,7 +181,6 @@ html{
 .Col-75{
 	width:73%;
 }
-
 .Button{
 	color:#0000ff;
 	background-color: #2196f3;
@@ -192,8 +207,37 @@ html{
 	border-color:transparent;
 }
 
+.Textfield{
+	color: #000000;
+	letter-spacing: 1px;
+
+}
+.Textfield:hover{
+	background-color: #BAFFFD;
+}
+.Textfield:focus,
+.Textfield:active{
+	background-color: #81C5FF;
+	border-color: #BAFFFD;
+}
+
 .Image-Scale{
-	display:block;
+	display: block;
 	max-width: 100%;
 	height: auto;
+}
+.Label-For{
+	font-weight: bold;
+}
+
+.Article{
+	border: 4px double #ffffff;	
+	height: 100%;
+	padding:1%;
+}
+.Article input{
+	width: 96%;
+	margin: 1%;
+	margin-right: auto;
+	margin-left: auto;
 }

@@ -31,6 +31,14 @@ function ChangeCss(documentPage){
 	}
 }
 
+function OnCookieTableLoad(){
+	//write html and load cookie in, something like this:
+	//var cookieList = document.cookie.split(";");
+	//for (var i = 0; i<cookieList.lenght; ++i){
+	//	var c = cookieList[i];
+	//}
+}
+
 function makeCookieTTLOneDay(name, value){
 
 

@@ -36,28 +36,74 @@
 </div>
 </header>
 <div class="MainContainer">
-	<p>
-		<center>
-			<object type="image/svg+xml" data="../Image/cookie.svg" class="Image-Scale">
-				Your browser does not support SVG
-			</object>
-		</center>
-	</p>
-	<p>
-		Eisen:
-		<ul>
-			Eisen:
-			<li>
-				Eis 1	
-			</li>
-			<li>
-				Eis 2
-			</li>
-			<li>
-				Eis 3
-			</li>
-		</ul>
-	</p>
+	<h1>
+		*Note* This is placeholder data!		
+	</h1>
+	<div class="Row">
+		<div class="Col-66">
+			<center>
+				<object type="image/svg+xml" data="../Image/cookie.svg" class="Image-Scale">
+					Your browser does not support SVG
+				</object>
+				Isn't this a nice cookie?
+			</center>
+		</div>
+		<div class="Col-33">
+			<article class="Article">
+				<div class="Row">
+					<h3>This is the content page</h3>
+					<h4>The cookie will automaticly expire within 1 hour. </h4>
+				</div>
+				<div class="Row">
+					<label for="tfCName">Cookie Name</label>
+					<input type="textfield" id="tfCName" class="Textfield"/>
+				</div>
+				<div class="Row">
+					<label for="tfCValue">Cookie Data</label>
+					<input type="textfield" id="tfCValue" class="Textfield"/>
+				</div>
+				<div class="Row">
+						<input type="button" class="Button" value="Go!"/>
+				</div>
+			</article>
+		</div>
+	</div>
+	<div class="Vertical-Spacing"></div>
+	<section class="Row">
+		<article>
+			<table id="CookieTable" class="Table" onload="OnCookieTableLoad();">
+				<thead id="CookieTableHead">
+					<tr>
+						<td>Cookie Naam </td>
+						<td>Cookie Data </td>
+						<td>Cookie Expire Date </td>
+					</tr>
+				</thead>
+				<tbody id="CookieTableBody">
+					<tr>
+						<td>Row 1, col 1 in body </td>
+						<td>Row 1, col 2 in body </td>
+						<td>Row 1, col 3 in body </td>
+					</tr>
+					<tr>
+						<td>Row 2, col 1 in body </td>
+						<td>Row 2, col 2 in body </td>
+					</tr>
+					<tr>
+						<td>Row 3, col 1 in body </td>
+						<td>Row 3, col 2 in body </td>
+					</tr>
+				</tbody>
+				<tfoot id="CookieTableFoot">
+					<tr>
+						<td>Row 1, col 1 in foot </td>
+						<td>Row 1, col 2 in foot </td>
+					</tr>
+				</tfoot>
+			</table>
+		</article>
+	</section>
+
 </div>
 <footer>
 	<div class="Footer"> 

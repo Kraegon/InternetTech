@@ -24,7 +24,6 @@ header marquee{
 
 header marquee:hover{
 	background-color: #00ff00;
-
 }
 
 header .Row{
@@ -38,6 +37,7 @@ header .Row{
 	color:white;
 	font-size: 16pt;
 	font-weight:bold;
+	cursor: pointer;
 }
 .Navbar-Button :hover{
 	background-color: #00ff00;
@@ -122,8 +122,20 @@ header .Row{
 	font-weight: bold;
 }
 .Row{
+	display: table;
+	width:98%;
+	margin-left: -2px;
+	margin-right: -2px;
+	min-height: 1px;
 }
 .Col-10, .Col-25, .Col-33, .Col-50, .Col-66, .Col-75{
+	float:left;
+	min-height: 1px;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+.Col-10:hover, .Col-25:hover, .Col-33:hover, .Col-50:hover, .Col-66:hover, .Col-75:hover{
+	background-color: #00ff00;
 }
 
 .Col-10{
