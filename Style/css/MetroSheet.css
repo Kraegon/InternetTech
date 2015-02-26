@@ -64,7 +64,13 @@ header .Row{
 	width:30%;
 }
 
-.Table > thead > tr > td,
+.Table > thead > tr > td{
+	background-color: #1A8705;
+	color: #ffffff;
+	font-size: 12pt;
+	font-weight: bolder;
+	padding: 2px 2px 2px 2px;
+}
 .Table > tbody > tr > td,
 .Table > tfoot > tr > td,
 .Table > thead > tr > th,
@@ -74,10 +80,8 @@ header .Row{
 	padding-right: 2%;
 	border: 4px solid #45de4c;
 }
-.Table > thead > tr:hover,
 .Table > tbody > tr:hover,
 .Table > tfoot > tr:hover,
-.Table > thead > tr:hover,
 .Table > tbody > tr:hover,
 .Table > tfoot > tr:hover{
 	font-weight: bold;
@@ -134,7 +138,8 @@ header .Row{
 	padding-left: 1%;
 	padding-right: 1%;
 }
-.Col-10:hover, .Col-25:hover, .Col-33:hover, .Col-50:hover, .Col-66:hover, .Col-75:hover{
+.Col-10:hover, .Col-25:hover, .Col-33:hover, .Col-50:hover, .Col-66:hover, .Col-75:hover
+.Col-10:active, .Col-25:active, .Col-33:active, .Col-50:active, .Col-66:active, .Col-75:active{
 	background-color: #00ff00;
 }
 

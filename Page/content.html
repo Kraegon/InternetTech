@@ -4,14 +4,19 @@
 	<title>Hello Web!</title>
 	<link id="style" rel="stylesheet" type="text/css" href="../Style/css/MasterSheet.css">
 	<link rel="stylesheet" type="text/css" href="../Style/css/normalize.css">
+	<script type="application/javascript" src="../Style/js/JQuery.js"> </script>
     <script type="application/javascript" src="../Style/js/Scripts.js"> </script>
+
+    <script type="text/javascript">
+    	$(document).ready(function(){ documentReadyContent(); });
+    </script>
 
 </head>
 <body>
 <header> 
 <div class="Header">
 	<marquee direction="right" scrollamount="5" behavior="alternate"> 
-		<a href="../index.html" style="text-decoration: none">
+		<a href="index.html" style="text-decoration: none">
 			<h1>
 				<img src="../Image/cookie.png" alt="Home" />
 			</h1>
@@ -71,7 +76,7 @@
 	<div class="Vertical-Spacing"></div>
 	<section class="Row">
 		<article>
-			<table id="CookieTable" class="Table" onload="OnCookieTableLoad();">
+			<table id="CookieTable" class="Table">
 				<thead id="CookieTableHead">
 					<tr>
 						<td>Cookie Naam </td>
@@ -80,26 +85,8 @@
 					</tr>
 				</thead>
 				<tbody id="CookieTableBody">
-					<tr>
-						<td>Row 1, col 1 in body </td>
-						<td>Row 1, col 2 in body </td>
-						<td>Row 1, col 3 in body </td>
-					</tr>
-					<tr>
-						<td>Row 2, col 1 in body </td>
-						<td>Row 2, col 2 in body </td>
-					</tr>
-					<tr>
-						<td>Row 3, col 1 in body </td>
-						<td>Row 3, col 2 in body </td>
-					</tr>
+ 				<!-- Data here is added in  -->
 				</tbody>
-				<tfoot id="CookieTableFoot">
-					<tr>
-						<td>Row 1, col 1 in foot </td>
-						<td>Row 1, col 2 in foot </td>
-					</tr>
-				</tfoot>
 			</table>
 		</article>
 	</section>
