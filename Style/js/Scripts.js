@@ -3,40 +3,11 @@
  *  By Julian G. West & Jelle Braat
  *  Custom Scripts
 */
-function ChangeCss(documentPage){
-	if (documentPage == "index"){
-		if (document.getElementById("style").getAttribute("href") == "Style/css/MasterSheet.css")
-		{
-			document.getElementById("style").setAttribute("href", "Style/css/MetroSheet.css");
-			makeCookieTTLOneDay("Style", "MetroSheet.css");
-		}
-		else
-		{
-			document.getElementById("style").setAttribute("href", "Style/css/MasterSheet.css");
-			makeCookieTTLOneDay("Style", "MasterSheet.css");
-		}
-	}
-	else 
-	{
-		if (document.getElementById("style").getAttribute("href") == "../Style/css/MasterSheet.css")
-		{
-			document.getElementById("style").setAttribute("href", "../Style/css/MetroSheet.css");
-			makeCookieTTLOneDay("Style", "MetroSheet.css");
-		}
-		else
-		{
-			document.getElementById("style").setAttribute("href", "../Style/css/MasterSheet.css");
-			makeCookieTTLOneDay("Style", "MasterSheet.css");
-		}
-	}
-}
-
-function OnCookieTableLoad(){
-	//write html and load cookie in, something like this:
-	//var cookieList = document.cookie.split(";");
-	//for (var i = 0; i<cookieList.lenght; ++i){
-	//	var c = cookieList[i];
-	//}
+function changeCss(documentPage){
+	if (document.getElementById("style").getAttribute("href") == "../Style/css/MasterSheet.css")
+		document.getElementById("style").setAttribute("href", "../Style/css/MetroSheet.css");
+	else
+		document.getElementById("style").setAttribute("href", "../Style/css/MasterSheet.css");
 }
 
 function makeCookieTTLOneDay(name, value){
@@ -60,10 +31,6 @@ function getCookie(cookieName){
         if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
     }
     return "";
-}
-
-function checkStyleCookie(){
-
 }
 
 
