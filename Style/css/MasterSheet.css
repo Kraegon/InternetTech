@@ -241,3 +241,10 @@ html{
 	margin-right: auto;
 	margin-left: auto;
 }
+.Hidden{
+	visibility: hidden;
+		height: 0px;
+}
+canvas{
+	border: 2px double #ffffff;
+}

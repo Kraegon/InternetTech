@@ -6,12 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="../Style/css/normalize.css">
 	<script type="application/javascript" src="../Style/js/JQuery.js"> </script>
     <script type="application/javascript" src="../Style/js/Scripts.js"> </script>
-    <script text/java>
-    	function checkCookie(){
-    		var cookie = document.cookie;
-    		console.log(cookie.toString());
-    	}
-    </script>
+    <script type="application/javascript" src="../Style/js/Game.js"> </script>
+
+    <div class="Hidden">
+    	<img id="cookieImg" src="../Image/cookie.png"/>
+    	<img id="grassImg" src="../Image/grass.png/"/>
+    </div>
+
 </head>
 <body>
 <header> 
@@ -69,14 +70,87 @@
 		</section>
 	</div>
 	<div class="Row">
-		<aside>
-			Aside
-		</aside>
-<!--		<audio autoplay loop controls> -->
-		<audio controls>
-  			<source src="Sound/Sample.mp3" type="audio/mpeg">
-				Your browser does not support the audio element.
-		</audio> 
+		<div class="Col-50">
+			<audio controls>
+	  			<source src="../Sound/Sample.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+			</audio> 
+		</div>
+		<div class="Col-50">
+
+		</div>
+	</div>
+	<div class="Row">
+		<canvas id="CookieCanvas" width="800" height="400">
+
+		</canvas>
+
+		<script>
+			var canvas = document.getElementById("CookieCanvas");
+			var context = canvas.getContext("2d");
+
+			var cookieImage = document.getElementById("cookieImg");
+			var grassImg = document.getElementById("grassImg");
+			var acceleration = 1.5;
+			var force = 1.5;
+			
+			
+			function CookieInvader(x, y, cookImg){
+				this.xx = x;
+				this.yy = y;
+				this.velocity = 0;
+				this.cookieImg = cookImg; 
+			}
+			CookieInvader.prototype = {
+				drawCookie : function(){
+					context.drawImage(this.cookieImg, this.xx, this.yy, this.cookieImg.width, cookieImg.height);
+				},
+				physicCookie : function() {
+					this.velocity += acceleration;
+					this.yy += this.velocity;
+
+					if (this.yy > 335){
+						this.velocity = -(this.velocity/force);
+						this.yy = 335;
+					}
+				},
+				//Not finished yet
+				collisionCookie : function (x, y){
+					var deltaX = this.xx - x;
+					var deltaY = this.yy - y;
+					var diagonal;
+				}
+			}
+
+			var testCookie = new CookieInvader(150, 50, cookieImage);
+			var cookieInvaderList = [new CookieInvader(50, 50, cookieImage), new CookieInvader(100, 60, cookieImage)];
+
+
+			canvas.addEventListener("mousedown", getPosition, false);
+			function getPosition(event){
+				var xMouse = event.pageX - canvas.offsetLeft;
+				var yMouse = event.pageY - canvas.offsetTop;
+				alert("x: " + xMouse + " y: " + yMouse);
+			}
+
+			function drawBox(){
+//				testCookie.drawCookie();
+//				testCookie.physicCookie();
+				for (var i = 0; i < cookieInvaderList.length; ++i){
+					cookieInvaderList[i].drawCookie();
+					cookieInvaderList[i].physicCookie();
+				}
+			
+				context.drawImage(grassImg, 0, 370, grassImg.width, cookieImg.height);
+			}
+			
+			function gameLoop(){
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				drawBox();
+			}
+
+			setInterval(gameLoop, 33.3);
+		</script>
 	</div>
 </div>
 <footer>
