@@ -84,72 +84,96 @@
 		<canvas id="CookieCanvas" width="800" height="400">
 
 		</canvas>
-
 		<script>
 			var canvas = document.getElementById("CookieCanvas");
 			var context = canvas.getContext("2d");
+			context.font = "48px serif";
+			context.fillStyle = "#ffffff";
 
 			var cookieImage = document.getElementById("cookieImg");
 			var grassImg = document.getElementById("grassImg");
-			var acceleration = 1.5;
-			var force = 1.5;
 			
+			var score = 0.0;
 			
 			function CookieInvader(x, y, cookImg){
 				this.xx = x;
 				this.yy = y;
 				this.velocity = 0;
-				this.cookieImg = cookImg; 
+				this.force = (Math.random() * 0.5) + 1 ;
+				this.acceleration = (Math.random() * 1.0) ;
+				this.cookieImg = cookImg;
+				this.cookieScore = 50.0;
 			}
 			CookieInvader.prototype = {
-				drawCookie : function(){
+				renderCookie : function(){
 					context.drawImage(this.cookieImg, this.xx, this.yy, this.cookieImg.width, cookieImg.height);
 				},
 				physicCookie : function() {
-					this.velocity += acceleration;
+					this.velocity += this.acceleration;
 					this.yy += this.velocity;
-
 					if (this.yy > 335){
-						this.velocity = -(this.velocity/force);
+						this.velocity = -(this.velocity/this.force) + 1;
 						this.yy = 335;
+						this.cookieScore -= 10.0;
 					}
 				},
-				//Not finished yet
-				collisionCookie : function (x, y){
-					var deltaX = this.xx - x;
-					var deltaY = this.yy - y;
-					var diagonal;
+				isCollisionCookie : function (x, y){
+					return ( this.xx < x && (this.xx + this.cookieImg.width) > x && this.yy < y && (this.yy + this.cookieImg.height > y)) ? true : false;
+				},
+				isAlive : function(){
+					return (this.cookieScore >= 5) ? true : false;
+				},
+				explosion : function(){
+					//TODO make cook 2d animation explostion
 				}
 			}
 
-			var testCookie = new CookieInvader(150, 50, cookieImage);
-			var cookieInvaderList = [new CookieInvader(50, 50, cookieImage), new CookieInvader(100, 60, cookieImage)];
+			var cookieInvaderList = [new CookieInvader(50, 50, cookieImage)];
 
-
+			for (var i = 0; i < 10; ++i){
+				cookieInvaderList.push(new CookieInvader( (Math.random()* canvas.width)+1, (Math.random()* 50)+1, cookieImage))
+			}
 			canvas.addEventListener("mousedown", getPosition, false);
 			function getPosition(event){
 				var xMouse = event.pageX - canvas.offsetLeft;
 				var yMouse = event.pageY - canvas.offsetTop;
-				alert("x: " + xMouse + " y: " + yMouse);
-			}
-
-			function drawBox(){
-//				testCookie.drawCookie();
-//				testCookie.physicCookie();
 				for (var i = 0; i < cookieInvaderList.length; ++i){
-					cookieInvaderList[i].drawCookie();
-					cookieInvaderList[i].physicCookie();
+					if(cookieInvaderList[i].isCollisionCookie(xMouse, yMouse)){
+						score += cookieInvaderList[i].cookieScore;
+						cookieInvaderList.splice(i,1);
+						cookieInvaderList.push(new CookieInvader( (Math.random()*750 )+1, 50, cookieImage));
+					}
+
 				}
-			
+			}
+			function renderAll(){
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				for (var i = 0; i < cookieInvaderList.length; ++i){
+					cookieInvaderList[i].renderCookie();
+				}
 				context.drawImage(grassImg, 0, 370, grassImg.width, cookieImg.height);
+				context.fillText("Score: " + score, 10, 50);
+			}
+			function idleAll(){
+				for (var i = 0; i < cookieInvaderList.length; ++i){
+					cookieInvaderList[i].physicCookie();
+					if(!cookieInvaderList[i].isAlive()){
+						cookieInvaderList.splice(i,1);
+						cookieInvaderList.push(new CookieInvader( (Math.random()*750 )+1, 50, cookieImage));	
+						if (score <= 0){
+							score = 0;
+						}else{
+							score -= 10;	
+						} 	
+					}
+				}
 			}
 			
 			function gameLoop(){
-				context.clearRect(0, 0, canvas.width, canvas.height);
-				drawBox();
+				renderAll();
+				idleAll();
 			}
-
-			setInterval(gameLoop, 33.3);
+			setInterval(gameLoop, 38.0);
 		</script>
 	</div>
 </div>
