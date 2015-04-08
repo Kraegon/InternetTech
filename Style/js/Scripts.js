@@ -1,5 +1,5 @@
 /*!
- *  v0.1
+ *  v1.1
  *  By Julian G. West & Jelle Braat
  *  Custom Scripts
  */
@@ -10,15 +10,8 @@
  	document.getElementById("style").setAttribute("href", storage);
  });
 
- function documentReadyContent(){
- 	var cooks = new Cookie("Naam", "waarde", 10);
- 	var cookiess = document.cookie.split(';');
-// 	var htmlCookie = "";
-// 	var cookieList = getCookieList();
-// 	for (var i = 0; i < cookieList.length; i++){
-// 		htmlCookie = "<tr> <td>" + cooks.cname + "</td> <td>" + cooks.cvalue + "</td> <td>" + cooks.cexpire + "</td> </tr> ";
-// 		$("#CookieTableBody").append(htmlCookie);
-// 	}
+function documentReadyContent(){
+ 	readAllCookies();
 }
 
 function changeCss(){
@@ -32,10 +25,15 @@ function changeCss(){
 	}
 }
 
-function Cookie(cname, cvalue, cexpire){
+function Cookie(cname, cvalue){
 	this.cname = cname;
 	this.cvalue = cvalue;
-	this.cexpire = cexpire;
+}
+
+function Cookie(cstring){
+	var splitString = cstring.split('=');
+	this.cname = splitString[0];
+	this.cvalue = splitString[1];
 }
 
 Cookie.prototype = {
@@ -44,26 +42,44 @@ Cookie.prototype = {
 	},
 
 	toString : function(){	
-		return this.cname + " " + this.cvalue + " " + this.cexpire;
+		return this.cname + " " + this.cvalue;
 	}
 }
 
-
-
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
+function readAllCookies() {
+	var cookiesList = document.cookie.split(";");
+	clearTable();
+	for (var i = cookiesList.length - 1; i >= 0; i--) {
+		var cooks = new Cookie(cookiesList[i]);
+		insertIntoTable(cooks);
+	};
+}
+	
+function readCookie(nameTemp){
+	var name = nameTemp + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	}
+	return null;
 }
 
-function getCookieList(){
-	return document.cookie.split(';');
+function createCookie(name,value){
+	document.cookie = name+"="+value+";";
 }
 
-function getCookie(cookieName){
-	return document.cookie.replace(/(?:(?:^|.*;\s*)"+ cookieName +"\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+function clearTable(){
+	$("#CookieTableBody").empty();
 }
 
+function insertIntoTable(cookie){
+	var htmlCookie = "<tr> <td>" + cookie.cname + "</td> <td>" + cookie.cvalue+ "</td> </tr> ";
+	$("#CookieTableBody").append(htmlCookie);
+}
 
-
+function makeDocumentCookie(name, value){
+	createCookie(name,value,1);
+	readAllCookies();
+}

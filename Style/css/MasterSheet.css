@@ -49,8 +49,8 @@ html{
 }
 
 .MainContainer{
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 10%;
+	padding-bottom: 10%;
 	width:90%;
 	height:90%;
 	margin-right: auto;
@@ -104,9 +104,9 @@ html{
 }
 
 
-@media(max-width: 992px){
+@media(max-width: 768px){
 	.MainContainer{
-		padding-top:10%;
+		padding-top:18%;
 	}
 	.Table{
 		width: 100%;

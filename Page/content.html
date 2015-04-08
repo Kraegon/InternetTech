@@ -8,16 +8,7 @@
 	<script type="application/javascript" src="../Style/js/Scripts.js"> </script>
 
 	<script type="text/javascript">
-	$(document).ready(function(){ documentReadyContent(); });
-	function makeDocumentCookie(name, value){
-		document.cookie = name + "=" + value;
-		insertIntoTable(name, value, "end of session");
-	}
-
-	function insertIntoTable(name, value, expire){
-		var htmlCookie = "<tr> <td>" + name + "</td> <td>" + value + "</td> <td>" + expire + "</td> </tr> ";
-		$("#CookieTableBody").append(htmlCookie);
-	}
+		$(document).ready(function(){ documentReadyContent(); });
 	</script>
 
 </head>
@@ -87,7 +78,6 @@
 						<tr>
 							<td>Cookie Naam </td>
 							<td>Cookie Data </td>
-							<td>Cookie Expire Date </td>
 						</tr>
 					</thead>
 					<tbody id="CookieTableBody">
