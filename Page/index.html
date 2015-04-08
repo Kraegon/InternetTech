@@ -1,192 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Hello Web!</title>
-	<link id="style" rel="stylesheet" type="text/css" href="../Style/css/MasterSheet.css">
-	<link rel="stylesheet" type="text/css" href="../Style/css/normalize.css">
-	<script type="application/javascript" src="../Style/js/JQuery.js"> </script>
-	<script type="application/javascript" src="../Style/js/Scripts.js"> </script>
-	<script type="application/javascript" src="../Style/js/Game.js"> </script>
-
-	<div style="visibility: hidden; height:0px;">
-		<img id="cookieImg" src="../Image/cookie.png"/>
-		<img id="grassImg" src="../Image/grass.png/"/>
-	</div>
-
-</head>
-<body>
-	<header> 
-		<div id="header" class="Header">
-			<marquee direction="right" scrollamount="5" behavior="alternate"> 
+	<head>
+		<title>Hello Web!</title>
+		<link id="style" rel="stylesheet" type="text/css" href="../Style/css/MasterSheet.css">
+		<link rel="stylesheet" type="text/css" href="../Style/css/normalize.css">
+		<script type="application/javascript" src="../Style/js/JQuery.js"> </script>
+		<script type="application/javascript" src="../Style/js/Scripts.js"> </script>
+		<script type="application/javascript" src="../Style/js/Game.js"> </script>
+		<div style="visibility: hidden; height:0px;">
+			<img id="cookieImg" src="../Image/cookie.png"/>
+			<img id="grassImg" src="../Image/grass.png/"/>
+		</div>
+	</head>
+	<body>
+		<header>
+			<div id="header" class="Header">
+				<marquee direction="right" scrollamount="5" behavior="alternate">
 				<a href="index.html">
 					<img src="../Image/cookie.png" alt="Home" />
 				</a>
-			</marquee>
-
-			<div class="Row">
-				<nav class="Navbar-Button">
-					<a class="Navbar-Button Navbar-Button-Align" href="index.html">
-						Home
-					</a>
-					<a class="Navbar-Button Navbar-Button-Align" href="content.html">
-						Content
-					</a>
-					<a class="Navbar-Button Navbar-Button-Align" href="about.html">
-						About
-					</a>
-					<a type="button" class="Navbar-Button Navbar-Button-Align"  	onclick="changeCss();" >
-						Change style
-					</a>
-				</nav>
+				</marquee>
+				<div class="Row">
+					<nav class="Navbar-Button">
+						<a class="Navbar-Button Navbar-Button-Align" href="index.html">
+							Home
+						</a>
+						<a class="Navbar-Button Navbar-Button-Align" href="content.html">
+							Content
+						</a>
+						<a class="Navbar-Button Navbar-Button-Align" href="about.html">
+							About
+						</a>
+						<a type="button" class="Navbar-Button Navbar-Button-Align"  	onclick="changeCss();" >
+							Change style
+						</a>
+					</nav>
+				</div>
 			</div>
-		</div>
-	</header>
-	<div class="MainContainer">
-		<div class="Row">
-
-			<article class="Col-50">
-				<p>
-					<fieldset class="Fieldset">
-						<legend>
-							Introduction
-						</legend>
-						This website is developed for the course "Internet Technologies". <br />
-						The purpose of this course is to learn how to make a Website that's responsive with a small project inside the website. This project includes reading/storing cookies from your webbrowser and a cookie minigame.<br />
-					</fieldset>
-				</p>
-			</article>
-			<section class="Col-50">
-				<p>
-					<h2>What are cookies?</h2>
-					Cookies are small objects that store information onto your bowser. 
-					<br />
-					Websites use cookies for all kind of situations, they can make and read them. this can be usefull in a lot of programms.
-					<br />
-					<h3>How do cookies store information?</h3>
-					Cookies store information in a easy way, every cookie contains 3 datafields. These 3 datafields stand for; Name, Value, Expire date. <br />
-					The name of the cookie can be random as well as the value for the cookie. <br />
-					The expire date stands for the date the cookie will expire, when a cookie reaches this date the browser wil automaticly throw away the cookie.
-				</p>
-			</section>
-		</div>
-		<div class="Row">
-			<div class="Col-50">
-				<audio controls>
-					<source src="../Sound/Sample.mp3" type="audio/mpeg">
+		</header>
+		<div class="MainContainer">
+			<div class="Row">
+				<article class="Col-50">
+					<p>
+						<fieldset class="Fieldset">
+							<legend>
+								Introduction
+							</legend>
+							This website is developed for the course "Internet Technologies". <br />
+							The purpose of this course is to learn how to make a Website that's responsive with a small project inside the website. This project includes reading/storing cookies from your webbrowser and a cookie minigame.<br />
+						</fieldset>
+					</p>
+				</article>
+				<section class="Col-50">
+					<p>
+						<h2>What are cookies?</h2>
+						Cookies are small objects that store information onto your bowser.
+						<br />
+						Websites use cookies for all kind of situations, they can make and read them. this can be usefull in a lot of programms.
+						<br />
+						<h3>How do cookies store information?</h3>
+						Cookies store information in a easy way, every cookie contains 3 datafields. These 3 datafields stand for; Name, Value, Expire date. <br />
+						The name of the cookie can be random as well as the value for the cookie. <br />
+						The expire date stands for the date the cookie will expire, when a cookie reaches this date the browser wil automaticly throw away the cookie.
+					</p>
+				</section>
+			</div>
+			<div class="Row">
+				<div class="Col-50">
+					<audio controls>
+						<source src="../Sound/Sample.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
-					</audio> 
+					</audio>
 				</div>
 				<div class="Col-50">
-
 				</div>
 			</div>
 			<div class="Row">
-				<canvas id="CookieCanvas" width="800" height="400">
-
-				</canvas>
-				<script>
-				var canvas = document.getElementById("CookieCanvas");
-				var context = canvas.getContext("2d");
-				context.font = "48px serif";
-				context.fillStyle = "#ffffff";
-
-				var cookieImage = document.getElementById("cookieImg");
-				var grassImg = document.getElementById("grassImg");
-
-				var score = 0.0;
-
-				function CookieInvader(x, y, cookImg){
-					this.xx = x;
-					this.yy = y;
-					this.velocity = 0;
-					this.force = (Math.random() * 0.5) + 1 ;
-					this.acceleration = (Math.random() * 1.0) ;
-					this.cookieImg = cookImg;
-					this.cookieScore = 50.0;
-				}
-				CookieInvader.prototype = {
-					renderCookie : function(){
-						context.drawImage(this.cookieImg, this.xx, this.yy, this.cookieImg.width, cookieImg.height);
-					},
-					physicCookie : function() {
-						this.velocity += this.acceleration;
-						this.yy += this.velocity;
-						if (this.yy > 335){
-							this.velocity = -(this.velocity/this.force) + 1;
-							this.yy = 335;
-							this.cookieScore -= 10.0;
-						}
-					},
-					isCollisionCookie : function (x, y){
-						return ( this.xx < x && (this.xx + this.cookieImg.width) > x && this.yy < y && (this.yy + this.cookieImg.height > y)) ? true : false;
-					},
-					isAlive : function(){
-						return (this.cookieScore >= 5) ? true : false;
-					},
-					explosion : function(){
-					//TODO make cook 2d animation explostion
-				}
-			}
-
-			var cookieInvaderList = [new CookieInvader(50, 50, cookieImage)];
-
-			for (var i = 0; i < 10; ++i){
-				cookieInvaderList.push(new CookieInvader( (Math.random()* canvas.width)+1, (Math.random()* 50)+1, cookieImage))
-			}
-			canvas.addEventListener("mousedown", getPosition, false);
-			function getPosition(event){
-				var xMouse = event.pageX - canvas.offsetLeft;
-				var yMouse = event.pageY - canvas.offsetTop;
-				for (var i = 0; i < cookieInvaderList.length; ++i){
-					if(cookieInvaderList[i].isCollisionCookie(xMouse, yMouse)){
-						score += cookieInvaderList[i].cookieScore;
-						cookieInvaderList.splice(i,1);
-						cookieInvaderList.push(new CookieInvader( (Math.random()*750 )+1, 50, cookieImage));
-					}
-
-				}
-			}
-			function renderAll(){
-				context.clearRect(0, 0, canvas.width, canvas.height);
-				for (var i = 0; i < cookieInvaderList.length; ++i){
-					cookieInvaderList[i].renderCookie();
-				}
-				context.drawImage(grassImg, 0, 370, grassImg.width, cookieImg.height);
-				context.fillText("Score: " + score, 10, 50);
-			}
-			function idleAll(){
-				for (var i = 0; i < cookieInvaderList.length; ++i){
-					cookieInvaderList[i].physicCookie();
-					if(!cookieInvaderList[i].isAlive()){
-						cookieInvaderList.splice(i,1);
-						cookieInvaderList.push(new CookieInvader( (Math.random()*750 )+1, 50, cookieImage));	
-						if (score <= 0){
-							score = 0;
-						}else{
-							score -= 10;	
-						} 	
-					}
-				}
-			}
-			
-			function gameLoop(){
-				renderAll();
-				idleAll();
-			}
-			setInterval(gameLoop, 38.0);
-			</script>
+				<canvas id="CookieCanvas" width="800" height="400"> </canvas>
+				<script src="../Style/js/Cookie_game.js" type="text/javascript"></script> 
+			</div>
 		</div>
-	</div>
-	<footer>
-		<div class="Footer"> 
-			<h1>
+		<footer>
+			<div class="Footer">
+				<h1>
 				Created by Julian G. West &amp Jelle Braat<br />
 				&copy 2015 Julian &amp Jelle
-			</h1>
-			<a href="http://www.w3schools.com/js/js_cookies.asp">
-				W3schools over cookies
-			</a>
-		</div>
-	</footer>
-</body>
+				</h1>
+				<a href="http://www.w3schools.com/js/js_cookies.asp">
+					W3schools over cookies
+				</a>
+			</div>
+		</footer>
+	</body>
 </html>
